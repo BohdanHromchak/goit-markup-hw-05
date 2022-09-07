@@ -2,6 +2,7 @@
   --secondary-background-color: #2f303a;
   --another-background-color: #f5f4fa;
   --button-background-focus: #188ce8;
+  --position-background-color: #2f303acc;
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --primary-black-color: #000000;
@@ -65,6 +66,9 @@ img {
 .header-nav:nth-child(2) {
   margin-left: auto;
 }
+.header-nav-item {
+  position: relative;
+}
 .header-nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -90,10 +94,27 @@ img {
   line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-nav-link:hover,
 .header-nav-link:focus {
   color: var(--accent-color);
+}
+.header-nav-link.current::after{
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 48px;
 }
 .header-contacts-link {
   text-decoration: none;
@@ -101,6 +122,10 @@ img {
   line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-link:hover,
 .header-contacts-link:focus {
@@ -161,11 +186,19 @@ img {
   text-decoration: none;
   line-height: 1.71;
   color: var(--primary-white-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link-item {
   text-decoration: none;
   line-height: 1.71;
   color: var(--footer-location-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link-location:hover,
 .footer-link-location:focus {
@@ -189,6 +222,10 @@ img {
   border-radius: 50%;
   background-color: var(--icon-fill-footer);
   color: var(--primary-white-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-socials-icon {
   fill: currentColor;
@@ -199,6 +236,7 @@ img {
 }
 
 /* index.html */
+
 /* Герой */
 .hero {
   padding-top: 200px;
@@ -238,6 +276,10 @@ img {
   letter-spacing: 0.06em;
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -307,8 +349,25 @@ img {
 .activities-section-list {
   display: flex;
 }
+.activities-section-image {
+  position: relative;
+}
 .activities-section-image:not(:last-child) {
   margin-right: 30px;
+}
+.activities-section-text {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-white-color);
+  background-color: var(--position-background-color);
+
+  padding: 27px 0 27px;
+  width: 370px;
+
+  position: absolute;
+  bottom: 0;
 }
 
 /* Наша команда */
@@ -359,8 +418,11 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-
   color: var(--icon-fill);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-link:hover,
 .socials-link:focus {
@@ -390,6 +452,10 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: var(--icon-fill);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-section-icon {
   fill: currentColor;
@@ -437,6 +503,10 @@ img {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
   background-color: var(--another-background-color);
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-menu:hover,
 .button-menu:focus {
@@ -449,6 +519,10 @@ img {
   display: block;
 
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .product-link:hover,
 .product-link:focus {
